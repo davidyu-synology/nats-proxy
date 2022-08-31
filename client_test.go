@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/nats-io/nats"
+	nats "github.com/nats-io/nats.go"
 )
 
 var nats_url = getTestNatsUrl()
@@ -15,7 +15,7 @@ var nats_url = getTestNatsUrl()
 func getTestNatsUrl() string {
 	natsURL := os.Getenv("NATS_URL")
 	if natsURL == "" {
-		natsURL = "127.0.0.1:4222"
+		natsURL = "demo.nats.io:4222"
 	}
 	return fmt.Sprintf("nats://%s", natsURL)
 }
